@@ -1,0 +1,110 @@
+body { background: #ffffff; }
+.has-tip { cursor: help; border-bottom: 1px dotted #777; }
+.scenario-note { font-size: 0.92rem; color: #555; }
+.stale-note { padding: .75rem 1rem; border: 1px solid #d9a441; border-radius: .4rem; background: #fffaf0; margin-bottom: 1rem; }
+.intro-box { padding: .8rem 1rem; background: #f8f9fa; border-left: 4px solid #6c757d; margin-bottom: 1rem; }
+.provenance-source { font-weight: 600; }
+.small-muted { font-size: .88rem; color: #666; }
+
+.computed-share {
+  margin: .35rem 0 1rem;
+  padding: .65rem .8rem;
+  border: 1px solid #d8dee4;
+  border-radius: .35rem;
+  background: #f8f9fa;
+}
+
+.computed-share-label {
+  display: block;
+  margin-bottom: .2rem;
+  color: #555;
+  font-size: .9rem;
+}
+
+.computed-share .shiny-text-output {
+  color: #34506b;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Grafikoni moraju dobiti stvarnu širinu i kada se nalaze u tek otvorenom
+   tabu. Ovo takođe sprečava da unutrašnji Shiny grafički uređaj nasledi
+   premale dimenzije iz fillable kontejnera. */
+.plot-frame {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  margin-bottom: .5rem;
+  background: #ffffff;
+}
+
+.plot-frame .shiny-plot-output {
+  display: block;
+  width: 100% !important;
+  min-width: 640px;
+  background: #ffffff;
+}
+
+@media (max-width: 720px) {
+  .plot-frame .shiny-plot-output {
+    min-width: 560px;
+  }
+}
+
+/* DataTables footer koristi plutajuće elemente za informaciju i paginaciju.
+   flow-root/clear sprečavaju da naslov ili tekst posle tabele sklizne ispod
+   tog reda i postane delimično prekriven. */
+.table-frame {
+  display: flow-root;
+  clear: both;
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 1.25rem;
+}
+
+.table-frame .dataTables_wrapper {
+  display: flow-root;
+  clear: both;
+  width: 100%;
+  padding-bottom: .5rem;
+}
+
+.table-frame .dataTables_wrapper::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.table-frame .dataTables_info,
+.table-frame .dataTables_paginate {
+  margin-bottom: .5rem;
+}
+
+.table-frame + h3 {
+  clear: both;
+  margin-top: 1rem;
+}
+
+.instruction-table {
+  width: 100%;
+  margin: .75rem 0 1rem;
+  background: #ffffff;
+}
+
+.instruction-table th {
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.instruction-table td {
+  vertical-align: top;
+  min-width: 9rem;
+}
+
+@media (max-width: 900px) {
+  .instruction-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

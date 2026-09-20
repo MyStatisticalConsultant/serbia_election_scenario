@@ -1,0 +1,37 @@
+key,ui_label,default,allowed_range,distribution,provenance,model_role
+central_source,Izvor centralne podrške,reconstructed,reconstructed/updated,Deterministički izbor,Korisnička vrednost,Bira osnovu centralnog vektora podrške
+exclude_nacija,Isključi Nacija TV,FALSE,TRUE/FALSE,Deterministički izbor,Analiza osetljivosti,Isključuje anketu pre agregacije
+pollster_strength,Jačina korekcije efekta anketara,100%,0-100%,Deterministički multiplikator,Rekonstruisana vrednost,Skalira istorijske korekcije NSPM i Faktor Plus
+election_cycle_sd,Greška anketa u izbornom ciklusu – SD,2.5 pp,0-8 pp,Ulazi u logističko-normalnu grešku,Nova specifikacija simulatora,Širi simuliranu neizvesnost podrške
+turnout_mean,Očekivana izlaznost,63.0%,45-75%,Ograničena normalna,Podatak iz izvornog dokumenta,Sredina distribucije izlaznosti
+turnout_sd,SD izlaznosti,1.5 pp,0-5 pp,Ograničena normalna,Podatak iz izvornog dokumenta,Neizvesnost izlaznosti
+reference_turnout,Referentna izlaznost,62.3%,45-70%,Fiksna,Konstrukcija iz rekonstrukcije,Definiše marginalni fond mobilizacije
+youth_pool,Fond mladih birača,913000,0-1500000,Fiksna,Podatak iz izvornog dokumenta,Gornja osnova mladih za mobilizaciju
+youth_mobilised_pct,Dodatno mobilisani mladi,0%,0-50%,Fiksna scenario vrednost,Pretpostavka scenarija,Određuje broj dodatno mobilisanih mladih
+youth_student,Studentska lista – mladi,70%,0-100%,Povezana kompoziciona alokacija,Pretpostavka scenarija,Raspodela mladih glasova; promena proporcionalno prilagođava preostala tri udela
+youth_sns,SNS – mladi,18%,0-100%,Povezana kompoziciona alokacija,Pretpostavka scenarija,Raspodela mladih glasova; zbir četiri udela ostaje 100%
+youth_sps,SPS – mladi,2%,0-100%,Povezana kompoziciona alokacija,Pretpostavka scenarija,Raspodela mladih glasova; zbir četiri udela ostaje 100%
+youth_other,Ostale liste – mladi,10%,0-100%,Povezana kompoziciona alokacija,Pretpostavka scenarija,Raspodela mladih glasova; zbir četiri udela ostaje 100%
+undecided_transfer_base,Transfer neopredeljenih koji preferiraju promenu,75%,0-100%,Skalirana Beta,Podatak/range iz izvornog dokumenta,Taktička alokacija definisanog neopredeljenog segmenta
+undecided_transfer_low,Donja granica transfera neopredeljenih,60%,0-100%,Skalirana Beta,Podatak iz izvornog dokumenta,Donja granica taktičkog transfera
+undecided_transfer_high,Gornja granica transfera neopredeljenih,90%,0-100%,Skalirana Beta,Podatak iz izvornog dokumenta,Gornja granica taktičkog transfera
+resid_change,Neopredeljeni koji preferiraju promenu,1.00%,0-10%,Fiksna scenario vrednost,Nova tehnička početna vrednost,Eksplicitno razdvaja deo nerazvrstanog ostatka
+resid_other,Ostale nemanjinske liste,1.28%,0-10%,Fiksna scenario vrednost,Nova tehnička početna vrednost,Dodaje podršku ostalim nemanjinskim listama
+resid_minority,Manjinske liste,1.50%,0-10%,Fiksna scenario vrednost,Nova tehnička početna vrednost,Dodaje podršku manjinskim listama
+resid_abstain,Verovatna apstinencija,0.30%,0-10%,Fiksna scenario vrednost,Nova tehnička početna vrednost,Ne pretvara se direktno u važeći glas
+resid_unclassified,Nerazvrstano,0.20%,0-10%,Fiksna scenario vrednost,Nova tehnička početna vrednost,Ne dodeljuje se mehanički nijednoj listi
+current_poll_weight,Težina aktuelnih anketa,91%,70-100%,Fiksni blend,Rekonstruisana vrednost 90-92%,Težina aktuelnih anketa naspram istorijskog sidra
+registered_voters,Broj upisanih birača,6440000,1000000-10000000,Fiksna,Konstrukcija iz rekonstrukcije,Pretvara izlaznost u broj glasačkih listića
+invalid_share,Udeo nevažećih listića,1.5%,0-5%,Fiksna,Rekonstruisana tehnička vrednost,Udeo među svim listićima birača koji su glasali; razdvaja ih od važećih glasova
+historical_anchor_votes,Istorijsko SNS+SPS sidro,2051996,1000000-3000000,Skalirana Beta u live modu,Podatak iz izvornog dokumenta,Istorijska komponenta SNS+SPS
+historical_anchor_low,Donja granica istorijskog sidra,1832000,500000-3000000,Skalirana Beta,Izvorni analitički raspon,Donja granica istorijske neizvesnosti
+historical_anchor_high,Gornja granica istorijskog sidra,2272000,500000-3500000,Skalirana Beta,Izvorni analitički raspon,Gornja granica istorijske neizvesnosti
+historical_kappa,Koncentracija Beta istorijskog sidra,20,5-100,Beta koncentracija,Nova specifikacija simulatora,Kontroliše rasipanje istorijskog sidra
+tactical_kappa,Koncentracija taktičkih transfera,20,5-100,Beta koncentracija,Nova specifikacija simulatora,Kontroliše rasipanje transfera
+threshold_gamma,Osetljivost transfera na cenzus,0.50,0-1,Logistička funkcija,Nova specifikacija simulatora,Pojačava transfer blizu/ispod 3%
+threshold_width,Širina zone oko cenzusa,0.6 pp,0.1-2.0 pp,Logistička funkcija,Nova specifikacija simulatora,Kontroliše brzinu promene transfera oko 3%
+major_bloc_corr,Korelacija latentnih grešaka glavnih blokova,-0.45,-0.9-0,Multivarijatna normalna,Nova specifikacija simulatora,Povezuje latentne greške Studentske liste i SNS/SPS
+turnout_min,Minimalna modelom dozvoljena izlaznost,45%,0-100%,Donja granica ograničene normalne,Nova specifikacija simulatora,Tehnička zaštita od ekstremno niskih slučajnih izvlačenja
+turnout_max,Maksimalna modelom dozvoljena izlaznost,75%,0-100%,Gornja granica ograničene normalne,Nova specifikacija simulatora,Tehnička zaštita od ekstremno visokih slučajnih izvlačenja
+seed,Seed,12345,1-2147483646,Generator slučajnih brojeva,Korisnička vrednost,Reproduktivnost
+n_sims,Broj simulacija,10000,1000/5000/10000/50000/100000,Monte Carlo,Korisnička vrednost,Monte Carlo stabilnost i brzina

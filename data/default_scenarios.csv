@@ -1,0 +1,6 @@
+scenario_id,scenario_name,description
+reconstructed,Rekonstruisana početna procena,"Početne podrške iz rekonstruisane metodološke beleške; bez automatske pretpostavke da je 4,28% ostatka jedna politička kategorija."
+base_tactical,Bazni taktički transferi,"Koristi bazne taktičke transfere iz beleške, uz umerenu izlaznost i standardnu neizvesnost simulatora."
+high_mob,Visoka izlaznost i visoka konsolidacija,"Viša izlaznost, snažnija taktička konsolidacija i veća mobilizacija mladih, po logici objavljenog visokog mobilizacionog scenarija."
+low_tactical,Niža taktička konsolidacija,"Niži nivoi taktičkih transfera, uz ostale parametre blizu baznog scenarija."
+high_uncertainty,Veća neizvesnost anketa,"Širi raspon izborne greške i veća raspršenost simuliranih rezultata, bez sistematskog favorizovanja bilo koje liste."

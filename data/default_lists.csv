@@ -1,0 +1,10 @@
+list_id,name,central_support,uncertainty_sd_pp,active,minority,tactical_target,baseline_transfer,lower_transfer,upper_transfer,manual_shift_pp,analytic_bloc
+student,Studentska lista,39.00,2.00,TRUE,FALSE,,0,0,0,0,Promena
+sns,SNS / Aleksandar Vučić lista,41.50,2.00,TRUE,FALSE,,0,0,0,0,Vlast
+sps,SPS,4.15,0.60,TRUE,FALSE,,0,0,0,0,Vlast
+mi,MI / Nestorović,2.77,0.80,TRUE,FALSE,,0,0,0,0,Ostalo
+narodna,Narodna Srbija,3.07,0.80,TRUE,FALSE,student,50,30,70,0,Promena
+proeu,Proevropski blok,3.27,0.80,TRUE,FALSE,student,60,40,80,0,Promena
+nada,NADA / Novi DSS,1.96,0.70,TRUE,FALSE,student,30,15,45,0,Ostalo
+other,Ostale nemanjinske liste,1.28,0.80,TRUE,FALSE,,0,0,0,0,Ostalo
+minority,Manjinske liste,1.50,0.50,TRUE,TRUE,,0,0,0,0,Manjine
