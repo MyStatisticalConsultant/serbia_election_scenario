@@ -65,6 +65,32 @@ testthat::test_that("drugačiji seed menja stohastički rezultat", {
   testthat::expect_false(identical(r1$shares, r2$shares))
 })
 
+testthat::test_that("rekonstruisani scenario daje označenu tabelu korelacija", {
+  r <- simulate_scenario(base_params(123, 100), default_polls, default_lists)
+  ids <- as.character(r$lists$list_id)
+  labels <- as.character(r$lists$name)
+
+  testthat::expect_equal(dim(r$correlation), c(length(ids), length(ids)))
+  testthat::expect_identical(rownames(r$correlation), ids)
+  testthat::expect_identical(colnames(r$correlation), ids)
+
+  testthat::expect_error(
+    correlation_table <- make_correlation_table(r$correlation, r$lists),
+    NA
+  )
+  testthat::expect_equal(nrow(correlation_table), length(ids))
+  testthat::expect_identical(correlation_table$Lista, labels)
+  testthat::expect_identical(names(correlation_table), c("Lista", labels))
+
+  # Prikaz ostaje stabilan i za stariji rezultat bez dimenzionih naziva.
+  testthat::expect_error(
+    fallback_table <- make_correlation_table(unname(r$correlation), r$lists),
+    NA
+  )
+  testthat::expect_identical(fallback_table$Lista, labels)
+  testthat::expect_identical(names(fallback_table), c("Lista", labels))
+})
+
 testthat::test_that("obična lista ispod 3% se isključuje", {
   v <- matrix(c(60000, 38000, 2000), nrow = 1, dimnames = list(NULL, c("A", "B", "C")))
   s <- allocate_dhondt_batch(v, 100000, c(FALSE, FALSE, FALSE), n_seats = 10)

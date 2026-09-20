@@ -36,6 +36,7 @@ scaled_beta_draw <- function(n, lower, upper, mean_value, kappa = 20) {
 }
 
 nearest_psd_correlation <- function(R, eps = 1e-8) {
+  original_dimnames <- dimnames(R)
   R <- (R + t(R)) / 2
   ev <- eigen(R, symmetric = TRUE)
   vals <- pmax(ev$values, eps)
@@ -43,6 +44,7 @@ nearest_psd_correlation <- function(R, eps = 1e-8) {
   d <- sqrt(diag(P))
   P <- P / outer(d, d)
   diag(P) <- 1
+  dimnames(P) <- original_dimnames
   P
 }
 

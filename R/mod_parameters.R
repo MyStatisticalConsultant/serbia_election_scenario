@@ -1,3 +1,47 @@
+make_correlation_table <- function(correlation, lists, digits = 3) {
+  mat <- as.matrix(correlation)
+  if (length(dim(mat)) != 2L || nrow(mat) == 0L || nrow(mat) != ncol(mat)) {
+    stop("Korelaciona matrica mora biti neprazna kvadratna matrica.")
+  }
+
+  list_ids <- as.character(lists$list_id)
+  list_names <- as.character(lists$name)
+  names_map <- setNames(list_names, list_ids)
+
+  fallback_ids <- if (length(list_ids) == nrow(mat)) {
+    list_ids
+  } else {
+    paste0("lista_", seq_len(nrow(mat)))
+  }
+
+  row_ids <- rownames(mat)
+  if (is.null(row_ids) || length(row_ids) != nrow(mat)) row_ids <- fallback_ids
+
+  col_ids <- colnames(mat)
+  if (is.null(col_ids) || length(col_ids) != ncol(mat)) col_ids <- row_ids
+
+  display_labels <- function(ids) {
+    labels <- unname(names_map[ids])
+    missing <- is.na(labels) | !nzchar(labels)
+    labels[missing] <- ids[missing]
+    labels
+  }
+
+  row_labels <- display_labels(row_ids)
+  col_labels <- display_labels(col_ids)
+  mat <- round(mat, digits)
+  dimnames(mat) <- list(row_ids, col_ids)
+
+  d <- data.frame(
+    Lista = row_labels,
+    as.data.frame(mat, stringsAsFactors = FALSE),
+    check.names = FALSE,
+    stringsAsFactors = FALSE
+  )
+  names(d) <- c("Lista", col_labels)
+  d
+}
+
 mod_parameters_ui <- function(id) {
   ns <- shiny::NS(id)
   shiny::tagList(
@@ -56,12 +100,7 @@ mod_parameters_server <- function(id, result_r) {
     output$corr <- DT::renderDT({
       shiny::req(result_r())
       r <- result_r()
-      mat <- round(r$correlation, 3)
-      labels <- setNames(r$lists$name, r$lists$list_id)
-      row_labels <- unname(labels[rownames(mat)])
-      col_labels <- unname(labels[colnames(mat)])
-      d <- data.frame(Lista = row_labels, mat, check.names = FALSE, stringsAsFactors = FALSE)
-      names(d) <- c("Lista", col_labels)
+      d <- make_correlation_table(r$correlation, r$lists)
       DT::datatable(
         d,
         rownames = FALSE,
