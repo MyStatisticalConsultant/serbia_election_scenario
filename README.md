@@ -4,7 +4,7 @@ Interaktivna **R Shiny aplikacija** za transparentnu Monte Carlo simulaciju uslo
 
 Aplikacija povezuje ankete, izlaznost, grešku izbornog ciklusa, mobilizaciju mladih, taktičko glasanje, izborni cenzus, poseban tretman manjinskih lista i D’Hondtovu raspodelu 250 mandata. Korisnik može menjati pretpostavke, porediti scenarije i preuzeti grafikone i kompletan Word izveštaj.
 
-> **Live Shiny aplikacija:** **[DODATI LIVE LINK NAKON OBJAVLJIVANJA]**  
+> **Live Shiny aplikacija:** **https://statisticar-serbia-election-scenario.share.connect.posit.cloud**  
 > **Povratne informacije:** [Zlatko@MyStatisticalConsultant.com](mailto:Zlatko@MyStatisticalConsultant.com)
 
 Aktuelna verzija aplikacije: **0.2.4**.
