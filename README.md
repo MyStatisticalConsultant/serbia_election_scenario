@@ -40,7 +40,7 @@ Omogućava da:
 - procenite koliko često obične liste prelaze izborni cenzus od 3%;
 - modelujete poseban tretman manjinskih lista;
 - odvojeno analizirate mobilizaciju mladih i raspodelu njihovih glasova;
-- ponovite isti rezultat korišćenjem istog seeda;
+- ponovite isti rezultat korišćenjem istog seeda (početna vrednost generatora slučajnih brojeva);
 - sačuvate parametre, rezultate i grafikone za proveru i dalje istraživanje.
 
 ---
@@ -135,7 +135,7 @@ Promena kontrola ne pokreće automatski novi obračun. Kada završite podešavan
 ## Struktura repozitorijuma
 
 ```text
-serbia_election_scenario_shiny/
+serbia_election_scenario/
 |
 |-- app.R
 |-- SerbiaElectionScenario.Rproj
@@ -268,8 +268,8 @@ Posle raspakivanja nemojte menjati unutrašnju strukturu foldera.
 Ako koristite Git:
 
 ```bash
-git clone <DODATI_HTTPS_ADRESU_GITHUB_REPOZITORIJUMA>
-cd serbia_election_scenario_shiny
+git clone https://github.com/MyStatisticalConsultant/serbia_election_scenario
+cd serbia_election_scenario
 ```
 
 Git nije potreban za uobičajeno lokalno korišćenje aplikacije; ZIP je dovoljan.
@@ -537,7 +537,7 @@ Uz prijavu priložite:
 
 Predloženo navođenje aplikacije:
 
-> Kovačić, Z. J. (2026). *Simulator izbornih scenarija – parlamentarni izbori u Srbiji* (verzija 0.2.4) [R Shiny aplikacija]. GitHub repozitorijum: `<DODATI URL GITHUB REPOZITORIJUMA>`.
+> Kovačić, Z. J. (2026). *Simulator izbornih scenarija – parlamentarni izbori u Srbiji* (verzija 0.2.4) [R Shiny aplikacija]. GitHub repozitorijum: `https://github.com/MyStatisticalConsultant/serbia_election_scenario`.
 
 Za potpuno reproduktivno navođenje navedite i korišćenu verziju ili Git commit.
 
