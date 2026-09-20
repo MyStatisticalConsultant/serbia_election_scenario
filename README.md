@@ -138,6 +138,7 @@ Promena kontrola ne pokreće automatski novi obračun. Kada završite podešavan
 serbia_election_scenario_shiny/
 |
 |-- app.R
+|-- manifest.json
 |-- SerbiaElectionScenario.Rproj
 |-- README.md
 |-- License.md
